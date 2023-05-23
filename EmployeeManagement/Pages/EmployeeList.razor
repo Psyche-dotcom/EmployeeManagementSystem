@@ -1,0 +1,30 @@
+﻿@page "/"
+@inherits EmployeeListBase
+@attribute [Authorize (Roles ="ADMIN")]
+<h3>Selected Employee Count: @selectedEmployeeCount</h3>
+<input type="checkbox" @bind="@showFooter"/>
+@if (Employees == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <div class="card-deck">
+        <div class="d-flex g-4">
+            @foreach (var employee in Employees)
+            {
+                <SingleEmployee employee="employee" showFooter="showFooter" OnEmployeeSelection="EmployeeSelectionChanged" OnEmployeeDeleted="EmployeeDelete" />
+            }
+        </div>
+    </div>
+    <AuthorizeView>
+        <Authorized>
+            <span>You are authorized as @context.User.Identity.Name</span>
+        </Authorized>
+        <NotAuthorized>
+            <span>You are not authorized</span>
+        </NotAuthorized>
+    </AuthorizeView>
+}
+
+

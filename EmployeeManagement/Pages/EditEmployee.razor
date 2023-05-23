@@ -1,0 +1,70 @@
+﻿@page "/editemployee/{id}"
+@page "/editemployee"
+@using EmployeeManagement.Model;
+
+<EditForm Model="@_Employee" OnValidSubmit="HandleSubmited">
+        <DataAnnotationsValidator/>
+        
+        <h3>@HeaderText</h3>
+        <hr/>
+    <ValidationSummary />
+        <div class="form-group row">
+            <label for="firstname" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-10">
+                <InputText id="firstname" class="form-control" placeholder="First Name" @bind-Value="_Employee.FirstName" />
+                <ValidationMessage For="@(()=>_Employee.FirstName)"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lastname" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-10">
+                <InputText id="lastname" class="form-control" placeholder="Last Name" @bind-Value="_Employee.LastName" />
+            <ValidationMessage For="@(()=>_Employee.LastName)" />
+            </div>
+        </div>
+        <div class="form-grop row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <InputText id="email" class="form-control" placeholder="Email" @bind-Value="_Employee.Email" />
+            <ValidationMessage For="@(()=>_Employee.Email)" />
+            </div>
+        </div>
+    <div class="form-grop row">
+        <label for="date" class="col-sm-2 col-form-label">Date of Birth</label>
+        <div class="col-sm-10">
+            <InputDate id="date" class="form-control" @bind-Value="_Employee.DateOfBirth" />
+        </div>
+    </div>
+    <div class="form-grop row">
+        <label for="department" class="col-sm-2 col-form-label">Department</label>
+        <div class="col-sm-10">
+           <CustomInputSelect id="department" @bind-Value='_Employee.DepartmentId' class="form-control">
+               @foreach (var department in _Departments)
+                {
+                    <option value="@department.DepartmentId">@department.DepartmentName</option>
+                }
+           </CustomInputSelect>
+        </div>
+    </div>
+    <div class="form-grop row">
+        <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+        <div class="col-sm-10">
+            <InputSelect id="gender" @bind-Value='_Employee.Gender' class="form-control">
+                @foreach (var gender in Enum.GetValues(typeof(Gender)))
+                {
+                    <option value="@gender">@gender</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    @if (_Employee.EmployeeId>0)
+    {
+        <button class="btn btn-danger" type="button" @onclick='Delete_Click'>Delete</button>
+    }
+</EditForm>
+<ConfirmDelete ConfirmationMessage=@($"Are you sure you want to delete {_Employee.FirstName}?")
+               ConfirmationTitle="Confirm Delete" ConfirmationChanged="ConfirmDelete_CLick" @ref="DeleteConfirmation"></ConfirmDelete>
+
+
+

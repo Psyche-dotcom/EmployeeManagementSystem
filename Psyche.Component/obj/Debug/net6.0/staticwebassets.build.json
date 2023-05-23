@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "USYU9IYnrPWNd4KmWf/W4ejZo6pt63mMc/SXeovaMbs=",
+  "Source": "Psyche.Component",
+  "BasePath": "_content/Psyche.Component",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Psyche.Component\\wwwroot",
+      "Source": "Psyche.Component",
+      "ContentRoot": "C:\\Users\\bsahe\\source\\repos\\Psyche.Component\\wwwroot\\",
+      "BasePath": "_content/Psyche.Component",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\bsahe\\source\\repos\\Psyche.Component\\wwwroot\\background.png",
+      "SourceId": "Psyche.Component",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bsahe\\source\\repos\\Psyche.Component\\wwwroot\\",
+      "BasePath": "_content/Psyche.Component",
+      "RelativePath": "background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\background.png"
+    },
+    {
+      "Identity": "C:\\Users\\bsahe\\source\\repos\\Psyche.Component\\wwwroot\\exampleJsInterop.js",
+      "SourceId": "Psyche.Component",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bsahe\\source\\repos\\Psyche.Component\\wwwroot\\",
+      "BasePath": "_content/Psyche.Component",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exampleJsInterop.js"
+    }
+  ]
+}
